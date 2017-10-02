@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>lesson 3</title>
+
+
+</head>
+<body>
+	<button><a href="index.html">Home</a></button>
+	<button><a href="lesson_1.html">lesson 1</a></button>
+	<button><a href="lesson_2.html">lesson 2</a></button>
+	<button><a href="lesson_3.html">lesson 3</a></button>
+	<br>
+	<hr>
+	<script type="text/javascript">
+		document.write('<h1>ARRAY</h1>');
+		var arr = [3, 8, 9, 12, 6, 3, 52, 63, 1];
+		document.write(arr.join(' | '));
+		document.write('<br><hr>');
+
+		document.write('<h3>Find the maximum and the minimum value, total sum, the average value</h3>');
+		var min = arr[0],
+			max = arr[0],
+			sum = 0;
+			odd = [];
+		for (i=0; i<arr.length; i++){ 
+			min = (arr[i]<min) ? arr[i] : min;
+			max = (arr[i]>max) ? arr[i] : max;
+			sum += arr[i];
+			if (arr[i]%2!=0) {
+				odd.push(arr[i]);
+			}
+		}
+		document.write('maximum velue = ' + max + '<br>');
+		document.write('minimum velue = ' + min + '<br>');
+		document.write('total sum = ' + sum + '<br>');
+		document.write('average value = ' + (sum/arr.length) + '<br>');
+		document.write('odd numbers = ' + odd + '<br>');
+		document.write('<br><hr>');
+
+		document.write('<h3>Two-dimensional array</h3>');
+		document.write('Требуется: создать двумерный массив элементов размерностью 5х5 и заполнить его произвольными целочисленными значениями.  По главной диагонали все числа со знаком (-) заменить на 0, а числа со знаком (+) на число 1<br><br>')
+		var twoDimArr = [[5,-4,6,-12,5],[8,9,-3,1,-25],[42,-55,-32,-6,1],[-5,6,11,23,-4],[6,-2,7,-8,14]];
+		document.write(twoDimArr.join(' <br> '));
+
+		for(i=0; i<twoDimArr.length; i++) {
+			twoDimArr[i][i] = twoDimArr[i][i]<0 ? 0 : 1;
+		}
+
+		document.write('<hr>' + twoDimArr.join(' <br> '));
+
+		document.write('<h3>Creating in array</h3>');
+		document.write('Задача из 5 шагов-строк:Создайте массив styles с элементами «Джаз», «Блюз».Добавьте в конец значение «Рок-н-Ролл» Замените предпоследнее значение с конца на «Классика». Код замены предпоследнего значения должен работать для массивов любой длины/Удалите первое значение массива и выведите его alert.Добавьте в начало значения «Рэп» и «Регги».<br><br>')
+
+		var styles = ['Jazz','Blues'];
+		document.write(styles + '<br>');
+		styles.push('rock-and-roll');
+		document.write(styles + '<br>');
+		styles[(styles.length-2)] = 'Classic';
+		document.write(styles + '<br>');
+		document.write(styles.pop() + '<br>');
+		styles.unshift('Pop','Reggae');
+		document.write(styles + '<br>');
+
+		// document.write('<h3>Creat the calculator</h3>');
+		// document.write('Напишите код, который:Запрашивает по очереди значения при помощи prompt и сохраняет их в массиве.		Заканчивает ввод, как только посетитель введёт пустую строку, не число или нажмёт «Отмена».При этом ноль 0 не должен заканчивать ввод, это разрешённое число.Выводит сумму всех значений массива<br><br>');
+
+		// var promtArray = [], a, promtArraySum=0;
+		// for (i=0;  ; i++){
+		// 	// a = prompt('Write a number','');
+		// 	if (a===null || a===""){
+		// 		break
+		// 	}
+		// 	else {
+		// 		promtArray[i] = a;
+		// 		promtArraySum += +promtArray[i];
+		// 	}
+		// }
+		// document.write("Array is " + promtArray + '<br>'); 
+		// document.write("sum = " + promtArraySum)
+
+		document.write('<h3>Find the value in array</h3>');
+		document.write('Создайте функцию find(arr, value), которая ищет в массиве arr значение value и возвращает его номер, если найдено, или -1, если не найдено.<br><br>');
+
+		var arr = ['night','52',true,'good'];
+		document.write('array = ' + arr + "<br>");
+		var a, index;
+		function find(a){
+			for (i=0; i<arr.length; i++){
+				if (arr[i] == a){
+					index = i;
+					break;
+				} else {
+					index = -1;
+				}
+			}
+			if (index == -1){
+				document.write('oups, "' + a + '" is not in the array :-( <br>');
+			} else {
+				document.write('i find "' + a + '" in the array !!! index = ' + i + '<br>');
+			}
+		}
+		find('night');
+
+
+
+		
+	</script>
+
+</body>
+</html>
