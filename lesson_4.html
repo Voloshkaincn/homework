@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>lesson 4 Function</title>
+
+
+</head>
+<body>
+	<button><a href="index.html">Home</a></button>
+	<button><a href="lesson_1.html">lesson 1</a></button>
+	<button><a href="lesson_2.html">lesson 2</a></button>
+	<button><a href="lesson_3.html">lesson 3</a></button>
+	<button><a href="lesson_4.html">lesson 4 Function</a></button>
+	<br>
+	<hr>
+	<script type="text/javascript">
+		document.write('<h1>Function</h1>');
+		
+		document.write('<h3>Function calculate</h3>');
+		document.write('Создайте метод с именем Calculate, который принимает в качестве параметров три целочисленных значения и выводит на экран среднее арифметическое этих параметров<br><br>');
+
+		function calculate(a,b,c){
+			return ((a+b+c)/3);
+		}
+		var f=5,
+			g=6,
+			r=10;
+		document.write('Average volume '+f+','+g+','+r+' = ' + calculate(f,g,r));
+
+		document.write('<h3>Function calculate with prompt</h3>');
+		document.write('Создайте четыре функции для арифметических действий: (Add – сложение, Sub – вычитание, Mul – умножение, Div – деление). Каждая функция должна принимать два параметра и выводить на экран результат вычисления. Функция деления должна делать проверку деления на ноль. Пользователь вводит значения, над которыми хочет произвести операцию и выбрать саму операцию. <br><br>');
+
+		function add(a,b){
+			document.write(a+" + "+b+"="+ (a+b));
+			return a+b;
+		}
+		function sub(a,b){
+			document.write(a+" - "+b+"="+ (a-b));
+			return a-b;
+		}
+		function mul(a,b){
+			document.write(a+" * "+b+"="+ (a*b));
+			return a*b;
+		}
+		function div(a,b){
+			if (b==0){
+				var b = prompt ('Divide on null not a possible. Write other number: ','');
+			}
+			document.write(a+" / "+b+"="+ (a/b));
+			return a/b;
+		}
+
+		var a = +prompt("Write first number: "),
+			z = prompt("Write an operator + - / *  : ",''),
+			b = +prompt("Write second number: ",'');
+
+			switch(z){
+				case("+"):
+					add(a,b);
+					break;
+				case("-"):
+					sub(a,b);
+					break;
+				case("*"):
+					mul(a,b);
+					break;
+				case("/"):
+					div(a,b);
+					break;
+			};
+
+		document.write('<h3>Function calculate</h3>');
+		document.write('Напишите функцию, которая будет принимать число и определять: 1. Является ли введенное число положительным или отрицательным. 2. Является ли оно простым  3. Делится ли оно на 2, 5, 3, 6, 9 без остатка <br><br>');
+
+		function setNumber(a){
+			var mes;
+			switch (a){
+				case (a<0):
+					mes = "This number is negative.";
+					break;
+				case (a=0):
+					mes = "This number is null. ";
+					break;
+				case (a>0):
+					mes = "This number is positive. ";
+					break;
+			}
+	   		for (i=2;i<a;i++){
+	   			mes += (a==2) ? "This number is prime. " break : "";
+	   			if (a%i == 0) {
+	   				mes += "Thus number is not prime";
+	   			} else {
+	   				
+	   			}
+	   		}
+		}
+
+
+
+
+
+
+
+
+		
+	</script>
+
+</body>
+</html>
