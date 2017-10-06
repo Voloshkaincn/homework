@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>lesson 5</title>
+
+
+</head>
+<body>
+	<button><a href="index.html">Home</a></button>
+	<button><a href="lesson_1.html">lesson 1</a></button>
+	<button><a href="lesson_2.html">lesson 2</a></button>
+	<button><a href="lesson_3.html">lesson 3</a></button>
+	<button><a href="lesson_4.html">lesson 4 Function</a></button>
+	<button><a href="lesson_5.html">lesson 5</a></button>
+	<br>
+	<hr>
+	<script type="text/javascript">
+
+		document.write('<h1>Types of datas</h1>');
+		
+		/*document.write('<h3>NUmbers</h3>');
+		document.write('Создайте страницу, которая предлагает ввести два числа и выводит их сумму.<br><br>');
+		a = +prompt("Write first number for sum: ");
+		b = +prompt("Write second number for sum: ");
+		alert(a + b);
+*/
+		document.write('<h3>getDecimal(num)</h3>');
+		document.write('Напишите функцию getDecimal(num), которая возвращает десятичную часть числа.<br><br>');
+
+		function getDecimal(num){
+			var num, result;
+			return result = num > 0 ? (num % 1) : (num % -1);
+		}
+		document.write(getDecimal(12.356)+"<br>"+getDecimal(1.2)+"<br>"+getDecimal(-1.2)+"<br>");
+
+		document.write('<h3>Fibonacci number</h3>');
+		document.write('Существует формула Бине, согласно которой Fn равно ближайшему целому для  ϕn/√5, где ϕ=(1+√5)/2 – золотое сечение. Напишите функцию fibBinet(n), которая будет вычислять Fn, используя эту формулу. Проверьте её для значения F77 (должно получиться fibBinet(77) = 5527939700884757).<br><br>');
+
+		function fib(n) {
+		  var a = 1,
+		    b = 0,
+		    x;
+		  for (i = 0; i < n; i++) {
+		    x = a + b;
+		    a = b
+		    b = x;
+		  }
+		  return b;
+		}
+
+		function fibBinet(n){
+			var f, n;
+			return f = Math.pow(((1 + Math.sqrt(5)) / 2), n)  / Math.sqrt(5); 
+		}
+
+		var n = 77;
+
+		document.write('Fibonacci number of ' + n + " by fib(n) = " + fib(n) + "<br>");
+		document.write('Fibonacci number of ' + n + " by fibBinet(n) = " + fibBinet(n) + "<br>");
+
+		document.write('<h3>Random number</h3>');
+		document.write('Напишите код для генерации случайного значения в диапазоне от 0 до max, не включая max.<br><br>');
+
+		function getRandomFrom0ToMax(max) {
+			return Math.floor(Math.random() * max);
+		}
+		var max = 15;
+		document.write('Random number from 0 to ' + max + " is " + getRandomFrom0ToMax(max) + "<BR>");
+
+		document.write('Напишите код для генерации случайного числа от min до max, не включая max.<br><br>');
+
+		function getRandomFromMinToMax(min, max) {
+			return (min + Math.floor(Math.random() * (max - min)));
+			
+		}
+		var min = 3;
+		document.write('Random number from' + min + ' to ' + max + 
+			" is " + getRandomFromMinToMax(min,max) + "<BR>");
+
+
+	</script>
+
+</body>
+</html>
