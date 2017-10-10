@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>lesson 6</title>
+</head>
+<body>
+	<button><a href="index.html">Home</a></button>
+	<br>
+	<hr>
+	<script type="text/javascript">
+		document.write('<h1>Strings</h1>');
+		
+		document.write('<h3>First letter to uppercase</h3>');
+		document.write('Напишите функцию ucFirst(str), которая возвращает строку str с заглавным первым символом в первом предложении и после точки.<br><br>');
+
+		function ucFirst(str){
+			var str;
+			return str.charAt(0).toUpperCase() + str.slice(1);
+		}
+
+		var str = "hello world";
+
+		document.write(ucFirst(str) + "<br>");
+
+		str += ". life is good. very good. ";
+
+		function ucFirstByPoint(str) {
+			var str, 
+			point = Array(),
+			strArray = Array(),
+			i = 0;
+			do {
+				point[i] = str.indexOf(".", (point[i-1]+1));
+				strArray [i] = ucFirst(str.slice(point[i-1]+1,point[i]+1).trim());
+				i++;
+			}  while (str.indexOf(".", (point[i-1]+1))>0);
+			return strArray.join(" ");
+		}
+
+		document.write(ucFirstByPoint(str));
+
+		document.write('<h3>Check on spam</h3>');
+		document.write('Напишите функцию checkSpam(str), которая возвращает true, если строка str содержит „viagra“ или „XXX“, а иначе false.<br><br>');
+
+		function checkSpam(str){
+			var str;
+			if (str.search("viagra") < 0 || str.search("XXX") < 0){
+				return true;
+			} else {
+				return false;
+			}
+		}
+
+		var some_str =" Bla bla bla XXX";
+
+
+		if (checkSpam(some_str)) {
+			document.write (some_str);
+		} else {
+			document.write("Warning! Some words, that you write, are forbidden!")
+		}
+
+
+
+	</script>
+
+</body>
+</html>
