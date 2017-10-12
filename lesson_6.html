@@ -61,6 +61,45 @@
 			document.write("Warning! Some words, that you write, are forbidden!")
 		}
 
+		document.write('<h3>Short string</h3>');
+		document.write('Создайте функцию truncate(str, maxlength), которая проверяет длину строки str, и если она превосходит maxlength – заменяет конец str на "...", так чтобы ее длина стала равна maxlength.Результатом функции должна быть (при необходимости) усечённая строка..<br><br>');
+
+		function truncate(str, maxlength){
+			var str, maxlength;
+			if (str.length > maxlength){
+				return str.slice(0, maxlength) + "...";
+			} else {
+				return str;
+			}			
+		}
+
+		var long_str = "It is very long string about nothing";
+			document.write(truncate(long_str, 20) + "<br>");
+
+		document.write('Функция которая обрезала б строку оставляя maxlength но не обрезая последее слово.<br><br>');
+		
+		function truncate_last_world(str, maxlength){
+			var str, maxlength, last_space;
+
+			last_space = truncate(str, maxlength).lastIndexOf(" ");
+			return truncate(str, last_space);
+		}
+
+		document.write(truncate_last_world(long_str, 20) + "<br>");
+
+		document.write('<h3>Return  number</h3>');
+		document.write('Есть стоимость в виде строки: "$120". То есть, первым идёт знак валюты, а затем – число.Создайте функцию extractCurrencyValue(str), которая будет из такой строки выделять число-значение, в данном случае 120..<br><br>');
+
+		function extractCurrenceValue(str){
+			var str;
+			return +str.slice(str.indexOf("$")+1);
+
+		}
+		price = "   $120";
+
+		document.write(extractCurrenceValue(price));
+
+	
 
 
 	</script>
