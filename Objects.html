@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Object</title>
+</head>
+<body>
+	<button><a href="index.html">Home</a></button>
+	<br>
+	<hr>
+	<script type="text/javascript">
+		"use strict";
+
+		document.write('<h1>Objects as an associative array</h1>');
+		
+		var user = {};
+		user.name = "Вася";
+		user.surname = "Петров";
+		user.name = "Сергей";
+		delete user.name;
+
+		document.write('<h1>Dose Objects empty?</h1>');
+		document.write('<p>Создайте функцию isEmpty(obj), которая возвращает true, если в объекте нет свойств и false – если хоть одно свойство есть.</p>')
+
+		function isEmpty(obj){
+			var count = 0;
+			for (var key in obj){
+				count++
+			}
+			return count > 0 ? false : true;
+		}
+		var user = {};
+
+		document.write("Object is Empty - " + isEmpty(user) + "<br>");
+
+		user = {
+			name: "Vasia",
+			surnamr: "Petrov",
+			age: "28"
+		};
+
+		document.write("Object is Empty - " + isEmpty(user) + "<br>");
+
+		document.write('<h1>Total sum of salaries</h1>');
+		document.write('<p>Есть объект salaries с зарплатами. Напишите код, который выведет сумму всех зарплат. Если объект пустой, то результат должен быть 0.</p>')
+
+		function salariesSum(obj){
+			var sum = 0;
+			for (var key in obj){
+				sum += obj[key];
+			}
+			return sum;
+		}
+		var salaries = {};
+
+		document.write("Total sum of salaries = " + salariesSum(salaries) + "<br>");
+
+		salaries = {
+		  "Вася": 100,
+		  "Петя": 300,
+		  "Даша": 250
+		};
+
+		document.write("Total sum of salaries = " + salariesSum(salaries) + "<br>");
+
+		document.write('<h1>Max salaries</h1>');
+		document.write('<p>Есть объект salaries с зарплатами. Напишите код, который выведет имя сотрудника, у которого самая большая зарплата. Если объект пустой, то пусть он выводит «нет сотрудников».</p>')
+
+		function salariesMax(obj){
+			var max = 0;
+			for (var key in obj){
+				max = max < obj[key] ? obj[key] : max;
+			}
+			return max = 0 ? "No employee" : max;
+		}
+
+		document.write("Max salaries is " + salariesMax(salaries) + "<br>");
+
+		document.write('<h1>Умножьте численные свойства на 2</h1>');
+		document.write('<p>Создайте функцию multiplyNumeric, которая получает объект и умножает все численные свойства на 2.</p>')
+
+		function isNumeric(n) {
+		  return !isNaN(parseFloat(n)) && isFinite(n)
+		}
+
+		function multiplyNumeric(obj){
+			for (var key in obj){
+				if (isNumeric(obj[key])){
+					obj[key] *= 2;
+				}
+			}
+			return obj;
+		}
+
+		var menu = {
+		  width: 200,
+		  height: 300,
+		  title: "My menu"
+		};
+
+		multiplyNumeric(menu);
+
+		for (var key in menu){
+			document.write(key + " : " + menu[key] + ", <br>");
+		};
+
+
+	
+
+
+	</script>
+
+</body>
+</html>
