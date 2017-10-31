@@ -104,6 +104,51 @@
 			document.write(key + " : " + menu[key] + ", <br>");
 		};
 
+		document.write('<h1></h1>');
+		document.write('<p>Создать объект «Документ», в котором определить свойства «Заголовок, Тело, Футер, Дата». Создать в объекте вложенный объект – «Приложение». Создать в объекте «Приложение», вложенные объекты, «Заголовок, Тело, Футер, Дата». Создать методы для заполнения и отображения документа. </p>');
+
+		var doc = {
+			title : "",
+			body : "",
+			footer : "",
+			date : "",
+			add : {
+				title : "",
+				body : "",
+				footer : "",
+				date : ""
+			}
+		}
+
+		function newDoc(doc){
+			for (var key in doc){
+				if (typeof(doc[key]) === "object"){
+					for (var subkey in doc[key]){
+						doc[key][subkey] = prompt("Write a " + subkey + " of " + key, "");
+					}
+				} else {
+					doc[key] = prompt ("Write a " + key, "");
+				}
+				
+			}
+			return doc;
+		}
+		newDoc(doc);
+		for (var key in doc) {
+			if (typeof(doc[key]) === "object"){
+				for (var subkey in doc[key]){
+						document.write (key + " " + subkey + " : " + doc[subkey] + "<br>");
+					}
+			} else {
+				document.write (key + " : " + doc[key] + "<br>");
+			}
+			
+		}
+		
+
+
+
+
 
 	
 
