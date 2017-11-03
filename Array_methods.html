@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Array methods</title>
+</head>
+<body>
+	<button><a href="index.html">Home</a></button>
+	<br>
+	<hr>
+	<script type="text/javascript">
+		"use strict";	
+
+		document.write('<h3>Перепишите цикл через map</h3>');
+		document.write('Код ниже получает из массива строк новый массив, содержащий их длины:<br><br>');
+
+		var arr = ["Есть", "жизнь", "на", "Марсе"];
+
+		var arrLength = arr.map(function(elem){
+			return elem.length;
+		});
+
+		document.write(arr.join(" , "));
+		document.write(" <br> ");
+		document.write(arrLength.join(" , "));
+
+
+		document.write('<h3>Массив частичных сумм</h3>');
+		document.write('Напишите функцию getSums(arr), которая возвращает массив его частичных сумм.<br><br>');
+
+		var numbers = [1, 2, 3, 4, 5];
+		var getSums = [];
+		var totalSumm = numbers.reduce(function(sum = numbers[0], elem, index){
+			getSums.push(sum);
+			return sum + elem;
+		});
+			getSums.push(totalSumm);
+			
+		document.write(getSums + "<br>" + totalSumm);
+
+
+
+
+
+		
+
+		
+	
+
+
+
+
+	
+
+
+	</script>
+
+</body>
+</html>
