@@ -38,6 +38,35 @@
 			
 		document.write(getSums + "<br>" + totalSumm);
 
+		document.write('<h3>Проверка на аргумент-undefined</h3>');
+		document.write('Как в функции отличить отсутствующий аргумент от undefined?<br><br>');
+
+		function f(x){
+			if (arguments.length !=0){
+				document.write (x);
+			} else {
+				document.write ("No arguments");
+			}
+		}
+		f(5);
+
+		document.write('<h3>Сумма аргументов</h3>');
+		document.write('Напишите функцию sum(...), которая возвращает сумму всех своих аргументов:<br><br>');
+
+		function argSum(){
+			var sum = 0;
+			for (var i=0; i<arguments.length; i++){
+				sum += arguments[i];
+			}
+			return sum;
+		};
+
+		document.write("сумма всех аргументов =" + argSum(1,5,20));
+
+
+
+
+
 
 
 
