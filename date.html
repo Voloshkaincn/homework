@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Object</title>
+</head>
+<body>
+	<button><a href="index.html">Home</a></button>
+	<br>
+	<hr>
+	<script type="text/javascript">
+		"use strict";
+
+		document.write('<h1>Дата  и время. Date and Time</h1>');
+	
+
+		document.write('<h2>Создайте дату</h2>');
+		document.write('<p>Создайте объект Date для даты: 20 февраля 2012 года, 3 часа 12 минут. Временная зона – местная. Выведите его на экран..</p>')
+
+		var someDate = Date(2012, 1, 20, 3, 12);
+		document.write("Some date is " + someDate);
+
+		document.write('<h2>День недели в европейской нумерации</h2>');
+		document.write('<p>Напишите функцию, getLocalDay(date) которая возвращает день недели для даты date.День нужно возвратить в европейской нумерации, т.е. понедельник имеет номер 1, вторник номер 2, …, воскресенье – номер 7.</p>')
+
+		function getLocalDay(date) {
+  			var day = date.getDay();
+  			if(day == 0) {
+  				day = 7;
+  			}
+			return day;
+		};
+
+		document.write(getLocalDay(someDate));
+
+
+
+
+
+
+
+	
+
+
+	</script>
+
+</body>
+</html>
